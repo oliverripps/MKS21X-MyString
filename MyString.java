@@ -12,15 +12,19 @@ public class MyString implements CharSequence/*,Comparable<CharSequence>*/{
     }
     else{
       throw new IndexOutOfBoundsException();
-    }
-
-  }
+    }}
   public int length(){
-    return data.length();
+    return data.length;
   }
   public CharSequence subSequence(int start, int end){
+
   }
   public String toString(){
+    String s = "";
+    for(int i=0; i<length();i++){
+      s+=charAt(i);
+    }
+    return s;
   }
 
 }
