@@ -3,11 +3,16 @@ public class MyString implements CharSequence/*,Comparable<CharSequence>*/{
   private char[] data;
   public MyString(CharSequence s){
   for(int i=0;i<s.length();i++){
-    data[i]=charAt(i);
+    data[i]=s.charAt(i);
   }
   }
   public char charAt(int index){
-    return data[index];
+    if(index<length() && index>=0){
+      return data[index];
+    }
+    else{
+      throw new IndexOutOfBoundsException();
+    }
 
   }
   public int length(){
