@@ -1,4 +1,4 @@
-public class MyString implements CharSequence/*,Comparable<CharSequence>*/{
+public class MyString implements CharSequence,Comparable<CharSequence>{
   private char[] data;
 
 public MyString(CharSequence s){
@@ -50,4 +50,32 @@ public MyString(CharSequence s){
     return s;
   }
 
-}
+  public int compareTo(CharSequence o){
+    //checking for null CharSequences
+    if(o==null || this==null){
+      throw new NullPointerException();
+    }
+    //creating an integer value as last check of compareTo
+    int lastcomp=this.length();
+    if(this.length()>o.length()){
+      lastcomp=o.length();
+    }
+    for(int i =0;i<lastcomp;i++){
+      int cur1 = (int) this.charAt(i);
+      int cur2 = (int) o.charAt(i);
+      if(cur1<cur2){
+        return -1;
+      }
+      if(cur1>cur2){
+        return 1;
+      }}
+      if(this.length()> o.length()){
+        return 1;
+      }
+      if(o.length()>this.length()){
+        return -1;
+      }
+      return 0;}
+
+
+    }
