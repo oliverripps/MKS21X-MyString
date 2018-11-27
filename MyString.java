@@ -1,11 +1,11 @@
 public class MyString implements CharSequence,Comparable<CharSequence>{
   private char[] data;
-
-public MyString(CharSequence s){
+  public MyString(CharSequence s){
 //Loop through CharSequence and put values into data
-  for(int i=0;i<s.length();i++){
-    data[i]=s.charAt(i);
-  }
+    data=new char[s.length()];
+    for(int i=0;i<s.length();i++){
+      data[i]=s.charAt(i);
+    }
   }
 
   public char charAt(int index){
