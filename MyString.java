@@ -57,9 +57,11 @@ public MyString(CharSequence s){
     }
     //creating an integer value as last check of compareTo
     int lastcomp=this.length();
+    //if one length is longer than another, set it to the shorter one
     if(this.length()>o.length()){
       lastcomp=o.length();
     }
+    //looping through the two CharSequences and once one has a higher ASki value, the proper number gets returned
     for(int i =0;i<lastcomp;i++){
       int cur1 = (int) this.charAt(i);
       int cur2 = (int) o.charAt(i);
@@ -68,13 +70,16 @@ public MyString(CharSequence s){
       }
       if(cur1>cur2){
         return 1;
-      }}
+      }
+    }
+    //assuming the are the same through the smaller number of letter's letters, you check length
       if(this.length()> o.length()){
         return 1;
       }
       if(o.length()>this.length()){
         return -1;
       }
+    //if they are still the same it means they are the same and 0 is returned
       return 0;}
 
 
